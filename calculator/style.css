@@ -1,0 +1,102 @@
+body {
+  background-color: #c73659;
+}
+/* General container for the calculator */
+.calculator {
+  width: 340px;
+  height: 540px;
+  margin: 100px auto;
+  border-radius: 40px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  background-color: #1c1c1c;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Display area */
+.display {
+  width: 100%;
+  height: 120px;
+  background-color: #000;
+  color: #fff;
+  font-size: 3em;
+  text-align: right;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+}
+
+/* Container for the buttons */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  padding-top: 10px;
+}
+
+/* General button styling */
+.button {
+  width: 100%;
+  height: 70px;
+  font-size: 1.5em;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: white;
+}
+
+/* Numeric buttons (0-9) */
+#zero {
+  grid-column: span 2;
+  background-color: #505050;
+}
+
+.button:not(#zero) {
+  background-color: #333;
+}
+
+#one,
+#two,
+#three,
+#four,
+#five,
+#six,
+#seven,
+#eight,
+#nine {
+  background-color: #505050;
+}
+
+/* Specific button colors for operations */
+#clear,
+#backspace,
+#divide,
+#multiply,
+#subtract,
+#add,
+#equals {
+  background-color: #f39c12;
+}
+
+/* Hover effect for buttons */
+.button:hover {
+  background-color: #666;
+}
+
+#clear:hover,
+#backspace:hover,
+#divide:hover,
+#multiply:hover,
+#subtract:hover,
+#add:hover,
+#equals:hover {
+  background-color: #e67e22;
+}
+
+/* Equals button */
+#equals {
+  background-color: #ff9500;
+  grid-column: span 2;
+}
