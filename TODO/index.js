@@ -7,10 +7,14 @@ function addTask() {
     const Li = document.createElement("li");
     const span = document.createElement("span");
     const button = document.createElement("button");
-    button.classList.add("btn");
-    button.innerHTML = "&#x2717";
+    const edit = document.createElement("button");
+    edit.classList.add("edit");
+    edit.innerHTML = "&#x270E;";
+    button.classList.add("delete");
+    button.innerHTML = "&times";
     span.innerHTML = input.value;
     Li.appendChild(span);
+    Li.appendChild(edit);
     Li.appendChild(button);
     document.querySelector("ul").appendChild(Li);
     input.value = "";
@@ -20,7 +24,6 @@ function addTask() {
 container.addEventListener(
   "click",
   function (e) {
-    console.log(e.target.tagName);
     if (e.target.tagName === "SPAN") {
       e.target.classList.toggle("completed");
     }
@@ -30,7 +33,7 @@ container.addEventListener(
 container.addEventListener(
   "click",
   function (e) {
-    if (e.target.className == "btn") {
+    if (e.target.className == "delete") {
       e.target.parentNode.remove();
     }
   },
@@ -74,3 +77,23 @@ function setActiveButton(clickedButton) {
   });
   clickedButton.classList.add("active");
 }
+
+const edits = document.querySelectorAll(".edit");
+edits.forEach((edit) => {
+  edit.addEventListener("click", (e) => {
+    const oldTask = e.target.parentNode.querySelector("span").textContent;
+    const newInput = document.createElement("input");
+    newInput.type = Text;
+    newInput.value = oldTask;
+    e.target.parentNode.querySelector("span").textContent = "";
+    e.target.parentNode.appendChild(newInput);
+    newInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        const newValue = newInput.value;
+        e.target.parentNode.querySelector("span").textContent = newValue;
+        e.target.parentNode.removeChild(newInput);
+      }
+    });
+  });
+  īī;
+});

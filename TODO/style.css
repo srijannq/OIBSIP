@@ -10,9 +10,6 @@ body {
   height: 100vh;
   color: #fff;
 }
-span {
-  cursor: pointer;
-}
 
 .container {
   background: rgba(0, 0, 0, 0.7);
@@ -60,18 +57,28 @@ li {
   align-items: center;
   font-size: 1rem;
 }
+span {
+  cursor: pointer;
+}
 
 span.completed {
   text-decoration: line-through;
   color: rgba(255, 255, 255, 0.5);
 }
 
+/* Button styling */
 button {
   background: none;
   border: none;
   color: #fff;
   font-size: 1.5rem;
   cursor: pointer;
+}
+
+/* Edit button styling */
+button.edit {
+  font-size: 1rem;
+  margin-left: 10px;
 }
 
 /* Filter buttons styling */
@@ -101,4 +108,14 @@ button {
   border: none;
   padding: 0.5rem;
   border-radius: 4px;
+}
+
+/* Flex container for buttons */
+.task-actions {
+  display: flex;
+  align-items: center;
+}
+
+.task-actions button {
+  margin-left: 10px;
 }

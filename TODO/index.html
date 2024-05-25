@@ -14,7 +14,13 @@
         placeholder="Create a new todo..."
         onkeydown="if (event.keyCode == 13) addTask()"
       />
-      <ul></ul>
+      <ul>
+        <li>
+          <span>Task 1</span>
+          <button class="edit">&#x270E;</button>
+          <button class="delete">&times;</button>
+        </li>
+      </ul>
       <div class="filters">
         <button class="filter-btn active" onclick="showAll(event)">
           All Tasks
