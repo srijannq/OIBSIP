@@ -8,23 +8,45 @@ function addTask() {
     const span = document.createElement("span");
     const button = document.createElement("button");
     const edit = document.createElement("button");
+    const dateAdd = document.createElement("span");
+    span.classList.add("task-text");
+    dateAdd.innerHTML = new Date().toLocaleString().replace(",", "");
+
+    dateAdd.classList.add("timestamp");
     edit.classList.add("edit");
     edit.innerHTML = "&#x270E;";
     button.classList.add("delete");
     button.innerHTML = "&times";
     span.innerHTML = input.value;
     Li.appendChild(span);
+    Li.appendChild(dateAdd);
     Li.appendChild(edit);
     Li.appendChild(button);
     document.querySelector("ul").appendChild(Li);
     input.value = "";
+
+    edit.addEventListener("click", (e) => {
+      const oldTask = e.target.parentNode.querySelector("span").textContent;
+      const newInput = document.createElement("input");
+      newInput.type = "text";
+      newInput.value = oldTask;
+      e.target.parentNode.querySelector("span").textContent = "";
+      e.target.parentNode.appendChild(newInput);
+      newInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          const newValue = newInput.value;
+          e.target.parentNode.querySelector("span").textContent = newValue;
+          e.target.parentNode.removeChild(newInput);
+        }
+      });
+    });
   }
 }
 
 container.addEventListener(
   "click",
   function (e) {
-    if (e.target.tagName === "SPAN") {
+    if (e.target.className === "task-text") {
       e.target.classList.toggle("completed");
     }
   },
@@ -77,23 +99,3 @@ function setActiveButton(clickedButton) {
   });
   clickedButton.classList.add("active");
 }
-
-const edits = document.querySelectorAll(".edit");
-edits.forEach((edit) => {
-  edit.addEventListener("click", (e) => {
-    const oldTask = e.target.parentNode.querySelector("span").textContent;
-    const newInput = document.createElement("input");
-    newInput.type = Text;
-    newInput.value = oldTask;
-    e.target.parentNode.querySelector("span").textContent = "";
-    e.target.parentNode.appendChild(newInput);
-    newInput.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") {
-        const newValue = newInput.value;
-        e.target.parentNode.querySelector("span").textContent = newValue;
-        e.target.parentNode.removeChild(newInput);
-      }
-    });
-  });
-  īī;
-});

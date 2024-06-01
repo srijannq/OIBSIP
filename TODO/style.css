@@ -56,12 +56,12 @@ li {
   justify-content: space-between;
   align-items: center;
   font-size: 1rem;
+  text-align: left;
 }
-span {
+.task-text {
   cursor: pointer;
 }
-
-span.completed {
+.task-text.completed {
   text-decoration: line-through;
   color: rgba(255, 255, 255, 0.5);
 }
@@ -79,6 +79,14 @@ button {
 button.edit {
   font-size: 1rem;
   margin-left: 10px;
+}
+
+/* Date and time styling */
+span.timestamp {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-left: auto;
+  margin-right: 10px;
 }
 
 /* Filter buttons styling */
@@ -108,14 +116,4 @@ button.edit {
   border: none;
   padding: 0.5rem;
   border-radius: 4px;
-}
-
-/* Flex container for buttons */
-.task-actions {
-  display: flex;
-  align-items: center;
-}
-
-.task-actions button {
-  margin-left: 10px;
 }
