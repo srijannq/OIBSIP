@@ -11,7 +11,7 @@ import methodOverride from "method-override";
 import { initialize } from "./passport-config.js";
 const app = express();
 const port = 3000;
-
+app.use(express.static("public"));
 initialize(
   passport,
   (email) => Users.find((user) => user.email === email),
