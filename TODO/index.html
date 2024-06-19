@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TODO APP</title>
     <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
     <div class="container">
@@ -14,21 +14,13 @@
         placeholder="Create a new todo..."
         onkeydown="if (event.keyCode == 13) addTask()"
       />
-      <ul>
-        <li>
-          <span class="task-text">Complete Javascript</span>
-          <span class="timestamp">2024-05-25 12:00</span>
-          <button class="edit">&#x270E;</button>
-
-          <button>&times;</button>
-        </li>
-      </ul>
+      <ul></ul>
       <div class="filters">
         <button class="filter-btn active" onclick="showAll(event)">
           All Tasks
-        </button>
-        <button class="filter-btn" onclick="showPending(event)">
-          Pending Tasks
+          <button class="filter-btn" onclick="showPending(event)">
+            Pending Tasks
+          </button>
         </button>
         <button class="filter-btn" onclick="showCompleted(event)">
           Completed Tasks
